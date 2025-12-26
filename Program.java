@@ -76,7 +76,6 @@ public class Program{
    private static void formatOutput(String type, String repo, int commits) {
         switch (type) {
             case "PushEvent":
-                // Se commits for 0 (não capturado), exibimos pelo menos 1 ou apenas a mensagem
                 System.out.println("- Pushed " + (commits > 0 ? commits : 1) + " commit(s) to " + repo);
                 break;
             case "IssuesEvent":
@@ -89,10 +88,10 @@ public class Program{
                 System.out.println("- Created a repository/branch in " + repo);
                 break;
             default:
-                // Remove a palavra "Event" do final para ficar mais limpo
                 String cleanName = type.replace("Event", "");
                 System.out.println("- " + cleanName + " in " + repo);
                 break;
         }
     }
+
 }
